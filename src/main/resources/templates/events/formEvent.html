@@ -11,13 +11,19 @@
 	<body>
 		<h1>Register Events</h1>
 		<h3><a  href="/events" class="waves-effect waves-light btn"><i class="material-icons left">arrow_back</i>List Events</a></h3>
-		<form method="post">
+		<form class="container" method="post">
 			Name: <input type="text" value="" name="nome" placeholder="digite seu nome" />
-			place: <input type="text" value="" name="local" placeholder="digite o local do evento" />
-			date: <input type="date" value="" name="data" />
-			time: <input type="text" value="" name="horario" placeholder="digite o horário" />
-			
-			<button type="submit"> Salvar </button>
+			<div class="row">
+				<div class="input-field col s6" >
+					place: <input type="text" value="" name="local" placeholder="digite o local do evento" />
+				</div>
+				<div class="input-field col s3" >
+					date: <input type="date" value="" name="data" />
+				</div>
+				<div class="input-field col s3" >
+					time: <input type="text" value="" name="horario" placeholder="digite o horário" />
+				</div>
+			<button class="waves-effect waves-light btn" type="submit"> Salvar </button>
 		</form>
 		<script type="text/javascript" src="materialize/js/materialize.min.js"></script>
 	</body>
