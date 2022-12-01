@@ -2,18 +2,34 @@
 <html xmlns:th="http://thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
 <head>
 <title>App Events WEB</title>
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+	<!--Import materialize.css-->
+	<link type="text/css" rel="stylesheet" href="materialize/css/materialize.min.css"  media="screen,projection"/>	
+	<!--Let browser know website is optimized for mobile-->
+	<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 </head>
 <body>
 	<h1>Events List</h1>
-	<h3><a href="/registerEvent">Register Event</a></h3>
+	<h3><a  href="/registerEvent" class="waves-effect waves-light btn"><i class="material-icons left">add_circle_outline</i>Register Event</a></h3>
 	
-	<div th:each="event : ${events}">
-		<div class="row">
-			<p><span th:text="${event.nome}"></span></p>
-			<p><span th:text="${event.local}"></span></p>
-			<p><span th:text="${event.data}"></span></p>
-			<p><span th:text="${event.horario}"></span></p>
-		</div>
-	</div>
+	<table>
+		<thead>
+			<tr>
+				<th>Name</th>
+				<th>place</th>
+				<th>date</th>
+				<th>time</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr th:each="event : ${events}">
+				<td><span th:text="${event.nome}"></span></td>
+				<td><span th:text="${event.local}"></span></td>
+				<td><span th:text="${event.data}"></span></td>
+				<td><span th:text="${event.horario}"></span></td>
+			</tr>
+		</tbody>
+	</table>
+	<script type="text/javascript" src="materialize/js/materialize.min.js"></script>
 </body>
 </html>
