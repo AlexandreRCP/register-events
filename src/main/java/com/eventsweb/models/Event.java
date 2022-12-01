@@ -1,11 +1,13 @@
 package com.eventsweb.models;
 
 import java.io.Serializable;
+import java.util.List;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.OneToMany;
 
 @Entity
 public class Event implements Serializable{
@@ -19,6 +21,9 @@ public class Event implements Serializable{
 	private String local;
 	private String data;
 	private String horario;
+	
+	@OneToMany
+	private List<Guest> guest;
 	
 	public long getId() {
 		return id;
